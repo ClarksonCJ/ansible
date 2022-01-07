@@ -1,0 +1,9 @@
+---
+- name: PyEnv Install
+  shell: curl https://pyenv.run | bash
+  tags:
+    - install
+    - core
+    - python
+  become_user: chris
+

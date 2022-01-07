@@ -1,0 +1,32 @@
+---
+sys_packages_one:
+- "build-essential"
+- "cmake"
+- "pkg-config"
+- "libpthread-stubs0-dev"
+
+sys_packages_two:
+- "lua5.1"
+- "unzip"
+- "libtool"
+- "libtool-bin"
+- "gettext"
+
+sys_packages_three:
+- "curl"
+- "htop"
+- "golang"
+- "lsof"
+- "ccache"
+- "ninja-build"
+- "pavucontrol"
+- "moreutils"
+- "clangd"
+
+clang_packages:
+- "clang"
+- "clang-11"
+- "clang-12"
+- "clangd"
+- "clangd-11"
+- "clangd-12"

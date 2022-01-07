@@ -124,3 +124,45 @@
     - neovim
     - dotfiles
     - anime
+
+- name: PayloadsAllthethings exists
+  stat:
+    path: "{{ personal }}/PayloadsAllTheThings"
+  register: patt
+  tags:
+    - install
+    - dotfiles
+    - neovim
+    - personal-project
+- name: Personal Project PayloadsAllTheThings
+  ansible.builtin.git:
+    repo: 'git@github.com:ClarksonCJ/PayloadsAllTheThings.git'
+    bare: true
+    dest: "{{ personal }}/PayloadsAllTheThings"
+  tags:
+    - install
+    - personal-project
+    - neovim
+    - dotfiles
+  when: patt.stat.exists == False
+
+- name: DockerFiles exists
+  stat:
+    path: "{{ personal }}/dockerfiles"
+  register: dockerfiles
+  tags:
+    - install
+    - dotfiles
+    - neovim
+    - personal-project
+- name: Personal Project dockerfiles
+  ansible.builtin.git:
+    repo: 'git@github.com:ClarksonCJ/dockerfiles.git'
+    bare: true
+    dest: "{{ personal }}/dockerfiles"
+  tags:
+    - install
+    - personal-project
+    - neovim
+    - dotfiles
+  when: dockerfiles.stat.exists == False
