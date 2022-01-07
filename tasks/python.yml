@@ -1,9 +1,35 @@
 ---
-- name: PyEnv Install
-  shell: curl https://pyenv.run | bash
+- name: Install pyenv
+  git:
+    repo: https://github.com/yyuu/pyenv.git
+    dest: "{{ home }}/.pyenv"
   tags:
     - install
-    - core
     - python
-  become_user: chris
 
+- name: Install pyenv-virtualenv plugin
+  git:
+    repo: https://github.com/yyuu/pyenv-virtualenv.git
+    dest: "{{ home }}/.pyenv/plugins/pyenv-virtualenv"
+  tags:
+    - install
+    - python
+
+- name: Ensure .pyenv permissions are set properly
+  file: path={{ home }}/.pyenv
+        recurse=yes
+        owner={{ user }}
+        group={{ user }}
+        state=directory
+  tags:
+    - install
+    - python
+    
+- name: Install default python version
+  become: yes
+  become_user: '{{ user }}'
+  shell: . {{ home }}.bashrc && pyenv install 3.9.7
+    creates="{{ home }}/.pyenv/versions/3.9.7"
+  tags:
+    - install
+    - python

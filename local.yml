@@ -3,6 +3,8 @@
     source_key: "./.ssh/id_rsa"
     dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
     personal: "{{ lookup('env', 'HOME') }}/personal"
+    home: "{{ lookup('env', 'HOME') }}"
+    user: "{{ lookup('env', 'USER') }}"
   pre_tasks:
   - name: Update Apt
     become: true
