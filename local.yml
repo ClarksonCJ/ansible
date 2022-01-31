@@ -5,6 +5,8 @@
     personal: "{{ lookup('env', 'HOME') }}/personal"
     home: "{{ lookup('env', 'HOME') }}"
     user: "{{ lookup('env', 'USER') }}"
+  vars_files:
+  - vars/vars.yml
   pre_tasks:
   - name: Update Apt
     become: true
