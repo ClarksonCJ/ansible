@@ -1,0 +1,14 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: get state of id_rsa
+    ansible.builtin.stat:
+      path: "~/.ssh/id_rsa"
+    register: key
+  - name: Example assertion
+    assert:
+      that: key.stat.exists
