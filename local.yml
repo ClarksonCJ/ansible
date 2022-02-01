@@ -1,6 +1,6 @@
 - hosts: localhost
   vars:
-    source_key: "./.ssh/id_rsa"
+    source_key: "~/.ssh/id_rsa"
     dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
     personal: "{{ lookup('env', 'HOME') }}/personal"
     home: "{{ lookup('env', 'HOME') }}"
@@ -17,10 +17,11 @@
     tags:
       - install
       - core
+  roles:
+    - core
+    - ssh
   tasks:
-    - include: tasks/ssh.yml
     - include: tasks/git-setup.yml
-    - include: tasks/core-setup.yml
     - include: tasks/node-setup.yml
     - include: tasks/npm-packages.yml
     - include: tasks/slack-setup.yml
@@ -30,4 +31,3 @@
     - include: tasks/dotfiles.yml
     - include: tasks/productivity-tools.yml
     - include: tasks/python.yml
-
