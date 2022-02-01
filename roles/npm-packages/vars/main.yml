@@ -1,0 +1,3 @@
+---
+# vars file for npm-packages
+npm-packages: "{{ packages | default(default_npm_packages) }}"

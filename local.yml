@@ -16,11 +16,11 @@
         - install
         - core
   roles:
-    - core
-    - git
+    - role: core
+    - role: git
+    - role: npm-packages
+
   tasks:
-   #- include: tasks/node-setup.yml
-   #- include: tasks/npm-packages.yml
    #- include: tasks/slack-setup.yml
    #- include: tasks/personal-projects.yml
    #- include: tasks/nvim-setup.yml

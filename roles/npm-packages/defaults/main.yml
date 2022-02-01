@@ -1,0 +1,8 @@
+---
+default_npm_packages:
+  - yarn
+  - eslint
+  - typescript-language-server
+  - typescript
+  - ts-node
+# defaults file for npm-packages

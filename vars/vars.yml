@@ -1,4 +1,6 @@
 ---
+node_version: "16.13.2"
+
 sys_packages_one:
 - "build-essential"
 - "cmake"

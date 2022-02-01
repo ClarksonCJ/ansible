@@ -93,6 +93,6 @@ default_git_config:
   - name: "mergetool.keepTemporaries"
     value: "false"
   - name: "mergetool.writeToTemp"
-    value: "ture"
+    value: "true"
   - name: "mergetool.prompt"
     value: "false"
