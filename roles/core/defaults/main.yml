@@ -1,0 +1,28 @@
+---
+default_sys_packages_one:
+- "build-essential"
+- "cmake"
+- "pkg-config"
+- "libpthread-stubs0-dev"
+
+default_sys_packages_two:
+- "lua5.1"
+- "unzip"
+- "libtool"
+- "libtool-bin"
+- "gettext"
+
+default_sys_packages_three:
+- "curl"
+- "htop"
+- "golang"
+- "lsof"
+- "ccache"
+- "ninja-build"
+- "pavucontrol"
+- "moreutils"
+- "clangd-10"
+
+clang_packages:
+- "clang"
+- "llvm"

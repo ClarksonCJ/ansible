@@ -1,0 +1,36 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify
+  hosts: all
+  gather_facts: false
+  become: true
+  vars_files:
+    - ../../defaults/main.yml
+  tasks:
+  - name: Gether Package facts
+    package_facts:
+      manager: auto
+  - name: Check that all sys package one is installed
+    assert:
+      that: "{{ ansible_facts.packages[item] | length == 1 }}"
+    when: "item in ansible_facts.packages"
+    loop: "{{ sys_packages_one | default(default_sys_packages_one) }}"
+  - name: Check that all sys package two is installed
+    assert:
+      that: "{{ ansible_facts.packages[item] | length  == 1}}"
+    when: "item in ansible_facts.packages"
+    loop: "{{ sys_packages_two | default(default_sys_packages_two) }}"
+  - name: Check that all sys package three is installed
+    assert:
+      that: "{{ ansible_facts.packages[item] | length  == 1}}"
+    when: "item in ansible_facts.packages"
+    loop: "{{ sys_packages_three | default(default_sys_packages_three) }}"
+  - name: Check that all clang packages are installed
+    assert:
+      that: "{{ ansible_facts.packages[item] | length  == 1}}"
+    when: "item in ansible_facts.packages"
+    loop: "{{ clang_packages | default(default_clang_packages) }}"
+
+
+

@@ -1,0 +1,14 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: instance
+    dockerfile: Dockerfile.j2
+    image: williamyeh/ansible:ubuntu18.04
+    pre_build_image: false
+provisioner:
+  name: ansible
+verifier:
+  name: ansible
