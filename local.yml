@@ -17,14 +17,14 @@
         - core
   roles:
     - core
+    - git
   tasks:
-    - include: tasks/git-setup.yml
-    - include: tasks/node-setup.yml
-    - include: tasks/npm-packages.yml
-    - include: tasks/slack-setup.yml
-    - include: tasks/personal-projects.yml
-    - include: tasks/nvim-setup.yml
-    - include: tasks/zsh-setup.yml
-    - include: tasks/dotfiles.yml
-    - include: tasks/productivity-tools.yml
-    - include: tasks/python.yml
+   #- include: tasks/node-setup.yml
+   #- include: tasks/npm-packages.yml
+   #- include: tasks/slack-setup.yml
+   #- include: tasks/personal-projects.yml
+   #- include: tasks/nvim-setup.yml
+   #- include: tasks/zsh-setup.yml
+   #- include: tasks/dotfiles.yml
+   #- include: tasks/productivity-tools.yml
+   #- include: tasks/python.yml

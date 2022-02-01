@@ -1,0 +1,4 @@
+---
+# vars file for git
+
+git_configs: "{{ gitconfigs | default(default_git_config) }}"
